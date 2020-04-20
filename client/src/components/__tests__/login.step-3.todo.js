@@ -37,7 +37,7 @@ test('calls onSubmit with the username and password when submitted', () => {
   // Act
   usernameNode.value = fakeUser.username
   passwordNode.value = fakeUser.password
-  submitButtonNode.click();
+  submitButtonNode.click()
 
   // Assert
   expect(handleSubmit).toHaveBeenCalledTimes(1)

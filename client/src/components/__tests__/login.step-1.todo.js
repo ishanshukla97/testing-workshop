@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Login from "../login";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Login from '../login'
 
 // Basic unit test
 test('calls onSubmit with the username and password when submitted', () => {
@@ -9,32 +9,32 @@ test('calls onSubmit with the username and password when submitted', () => {
   // create a jest.fn() for your submit handler
   // render the Login component to a div
   // TIP: const div = document.createElement('div')
-  const fakeUser = {username: "abccddef", password: "fsdfdsfas"};
-  const handleSubmit = jest.fn();
-  const container = document.createElement('div');
-  ReactDOM.render(<Login onSubmit={handleSubmit} />, container);
+  const fakeUser = {username: 'abccddef', password: 'fsdfdsfas'}
+  const handleSubmit = jest.fn()
+  const container = document.createElement('div')
+  ReactDOM.render(<Login onSubmit={handleSubmit} />, container)
 
   // get the field nodes
   // TIP: const inputs = div.querySelectorAll('input')
   // TIP: const form = div.querySelector('form')
   // fill in the field values
-  const inputs = container.querySelectorAll('input');
-  const formNode = container.querySelector('form');
-  const submitButtonNode = container.querySelector('button');
-  const usernameNode = inputs[0];
-  const passwordNode = inputs[1];
-  usernameNode.value = fakeUser.username;
-  passwordNode.value = fakeUser.password;
+  const inputs = container.querySelectorAll('input')
+  const formNode = container.querySelector('form')
+  const submitButtonNode = container.querySelector('button')
+  const usernameNode = inputs[0]
+  const passwordNode = inputs[1]
+  usernameNode.value = fakeUser.username
+  passwordNode.value = fakeUser.password
 
   // Act
   // submit the form:
   // TIP: formNode.dispatchEvent(new window.Event('submit'))
-  formNode.dispatchEvent(new window.Event('submit'));
+  formNode.dispatchEvent(new window.Event('submit'))
   // Assert
   // ensure your submit handler was called properly
-  expect(handleSubmit).toHaveBeenCalledTimes(1);
-  expect(handleSubmit).toHaveBeenCalledWith(fakeUser);
-  expect(submitButtonNode.type).toBe('submit');
+  expect(handleSubmit).toHaveBeenCalledTimes(1)
+  expect(handleSubmit).toHaveBeenCalledWith(fakeUser)
+  expect(submitButtonNode.type).toBe('submit')
 })
 
 //////// Elaboration & Feedback /////////

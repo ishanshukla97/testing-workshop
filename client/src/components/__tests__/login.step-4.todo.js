@@ -30,8 +30,8 @@ test('calls onSubmit with the username and password when submitted', () => {
 test('snapshot', () => {
   // render the login, this will give you back an object with a `container` property
   // expect the `container` property to match a snapshot
-  const {container} = render(<Login />);
-  expect(container.firstChild).toMatchSnapshot();
+  const {container} = render(<Login />)
+  expect(container.firstChild).toMatchSnapshot()
 })
 
 //////// Elaboration & Feedback /////////
